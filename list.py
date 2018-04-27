@@ -17,17 +17,17 @@ def intersection(a, b):
 
 def set_difference(u, a):
     ans = []
-    c=u+a
-    [ans.append(x) for x in c if x not in intersection(u,a)]
+    [ans.append(x) for x in u if x not in a and x not in ans]
     return ans
 
-#print(set_difference((1, 2, 3), (2, 3, 4)))
+#print(set_difference([1, 2, 3], [2, 3, 4]))
 
 def sym_diff(a, b):
     return set_difference(union(a,b), intersection(a, b))
 
-print(sym_diff([1, 2, 3], [2, 3, 4]))
+#print(sym_diff([1, 2, 3], [2, 3, 4]))
 
 def cartesian_prod(a, b):
     return [(x,y) for x in a for y in b]
 
+print(cartesian_prod(['red', 1], [2, 'hi']))
